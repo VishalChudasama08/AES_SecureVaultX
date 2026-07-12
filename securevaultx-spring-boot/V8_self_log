@@ -1,0 +1,7 @@
+======= Spring Boot =======
+IDE: STS
+Project Name: securevaultx-spring-boot
+Package: com.securevaultx.backend
+Dependency's: Spring Boot DevTools, Spring Data JPA, Spring Web, Spring Security, MySQL Driver, Validation
+technology: Spring Boot version 4.1.0, Java 21 LTS, MySql 8.4.8, Maven
+ 
