@@ -2,8 +2,6 @@ package com.securevaultx.backend.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +17,7 @@ public class AuthController {
 	
 	@PostMapping("/api/auth/register")
 	public ResponseEntity<?> register(@RequestBody RegisterRequest request) {
+		System.out.println("Register API called");
 
 	    boolean status = authService.registerUser(request);
 
