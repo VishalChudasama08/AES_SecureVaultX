@@ -1,4 +1,4 @@
-package com.securevaultx.backend.dto;
+package com.securevaultx.backend.request;
 
 public class RegisterRequest {
 	private String fullName;

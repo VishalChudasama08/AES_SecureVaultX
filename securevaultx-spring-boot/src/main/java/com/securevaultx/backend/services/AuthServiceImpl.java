@@ -3,7 +3,9 @@ package com.securevaultx.backend.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.securevaultx.backend.dto.RegisterRequest;
+import com.securevaultx.backend.request.LoginRequest;
+import com.securevaultx.backend.request.RegisterRequest;
+import com.securevaultx.backend.response.LoginResponse;
 import com.securevaultx.backend.entities.User;
 import com.securevaultx.backend.repositories.UserRepository;
 
@@ -27,6 +29,17 @@ public class AuthServiceImpl implements AuthService {
 			return true;
 		} catch (Exception e) {
 			return false;
+		}
+	}
+
+	@Override
+	public LoginResponse loginUser(LoginRequest loginRequest) {
+		User validUser = userRepository.findByEmail(loginRequest.getEmail());
+		
+		if (validUser != null && validUser.getPassword().equals(loginRequest.getPassword())) {
+			return new LoginResponse(validUser.getFullName(), validUser.getPhoneNumber(), validUser.getEmail(), validUser.getUpdatedAt(), validUser.getCreatedAt());
+		} else {
+			return null;
 		}
 	}
 

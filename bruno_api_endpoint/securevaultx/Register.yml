@@ -1,0 +1,30 @@
+info:
+  name: Register
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:8080/api/auth/register
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: "{\r
+
+      \    \"fullName\": \"Vishal\",\r
+
+      \    \"phoneNumber\": \"9876543210\",\r
+
+      \    \"email\": \"vishal@gmail.com\",\r
+
+      \    \"password\": \"12345678\"\r
+
+      }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
